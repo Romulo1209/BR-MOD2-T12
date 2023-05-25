@@ -4,12 +4,12 @@ from pygame import mixer
 
 from dino_runner.components.obstacles.cactus import SmallCactus, LargeCactus
 from dino_runner.components.obstacles.bird import Bird
-from dino_runner.utils.constants import SMALL_CACTUS, LARGE_CACTUS, POWERUP_DESTROY, DEATH_SONG
+from dino_runner.utils.constants import SMALL_CACTUS, LARGE_CACTUS, POWERUP_DESTROY, DEATH_SONG, DESTROY_SONG
 
 class ObstacleManager:
     def __init__(self):
         mixer.init()
-        mixer.Channel(1).set_volume(0.3)
+        mixer.Channel(2).set_volume(0.1)
 
         self.obstacles = []
     
@@ -27,6 +27,7 @@ class ObstacleManager:
                 else:
                     if self.powerupCheckImmunity(game.player.type, obstacle.obstacleType) == True:
                         self.obstacles.remove(obstacle)
+                        mixer.Channel(2).play(DESTROY_SONG)
                     else:
                         self.killPlayer(game)
     

@@ -14,7 +14,7 @@ class Game:
         pygame.display.set_icon(ICON)
 
         mixer.init()
-        mixer.Channel(0).set_volume(0.15)
+        mixer.Channel(0).set_volume(0.05)
 
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         self.clock = pygame.time.Clock()

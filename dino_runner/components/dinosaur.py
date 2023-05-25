@@ -16,7 +16,7 @@ RUN_IMAGE = {DEFAULT_TYPE: RUNNING, SHIELD_TYPE: RUNNING_SHIELD, HAMMER_TYPE: RU
 class Dinosaur:
     def __init__(self):
         mixer.init()
-        mixer.Channel(1).set_volume(0.3)
+        mixer.Channel(1).set_volume(0.1)
 
         self.type = DEFAULT_TYPE
         self.image = RUN_IMAGE[self.type][0]

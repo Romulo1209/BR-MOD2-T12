@@ -9,7 +9,7 @@ from dino_runner.utils.constants import POWERUP_SPAWN_MAX, POWERUP_SPAWN_MIN, PO
 class PowerUpManager:
     def __init__(self):
         mixer.init()
-        mixer.Channel(1).set_volume(0.3)
+        mixer.Channel(1).set_volume(0.1)
 
         self.powerups = []
         self.appears = 0
